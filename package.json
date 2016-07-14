@@ -1,0 +1,27 @@
+{
+  "name": "opine-nightwatch",
+  "version": "0.1.0",
+  "description": "A gulp-opine module for browser automated testing with Nightwatch.js and BrowserStack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StudioThick/opine-nightwatch.git"
+  },
+  "author": "Studio Thick",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/StudioThick/opine-nightwatch/issues"
+  },
+  "homepage": "https://github.com/StudioThick/opine-nightwatch#readme",
+  "peerDependencies": {
+    "gulp-opine": ">=0.7.0"
+  },
+  "dependencies": {
+    "browserstack-local": "^1.0.0",
+    "gulp-util": "^3.0.7",
+    "nightwatch": "^0.9.5"
+  }
+}
