@@ -1,9 +1,9 @@
-# opine-nightwatch
+# opine-browsertest
 
 A [gulp-opine] [opine] module for browser automated testing with
-[Nightwatch.js] [nightwatch] and [BrowserStack] [browserstack]
+[Webdriver.io] [webdriver] and [BrowserStack] [browserstack]
 
 
 [opine]: <https://github.com/StudioThick/gulp-opine>
-[nightwatch]: <http://nightwatchjs.org>
+[webdriver]: <http://webdriver.io/>
 [browserstack]: <https://www.browserstack.com>
