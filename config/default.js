@@ -92,7 +92,8 @@ module.exports = {
       },
       'browserstack': {
         'username': null,
-        'accesskey': null
+        'accesskey': null,
+        'screenshotUrls': []
       }
     }
   }

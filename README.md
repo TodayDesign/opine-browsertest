@@ -51,6 +51,8 @@ Capabilities settings for BrowserStack can be found at
 to run on a single capability specifying a `--cap` paramater with the name of the
 capability. e.g. `gulp browsertest --cap android`
 
+- `browsertest-screenshots`: it creates screenshots of specified urls.
+
 [opine]: <https://github.com/StudioThick/gulp-opine>
 [webdriver]: <http://webdriver.io/>
 [browserstack]: <https://www.browserstack.com>

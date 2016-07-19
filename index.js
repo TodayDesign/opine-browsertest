@@ -5,6 +5,7 @@ var webdriver = require('gulp-webdriver');
 var del = require('del');
 var module = opine.module('browsertest');
 var minimist = require('minimist');
+var screenshots = require('./screenshots');
 
 var knownOptions = {
   string: 'cap',
@@ -12,24 +13,11 @@ var knownOptions = {
 };
 
 var options = minimist(process.argv.slice(2), knownOptions);
+var wdioConfig = module.getConfig('wdio', {});
 
-module.task(function() {
-
-  gutil.log('Sit back and relax...');
-
-  gutil.log('Loading browsers stack access details');
-
-  var browserstackConfig = module.getConfig('browserstack', {
-    'username': process.env.BROWSERSTACK_USERNAME,
-    'accesskey': process.env.BROWSERSTACK_ACCESS_KEY
-  });
-
-  process.env.BROWSERSTACK_USERNAME = browserstackConfig.username;
-  process.env.BROWSERSTACK_ACCESS_KEY = browserstackConfig.accesskey;
-
+function loadCapabities() {
   gutil.log('Loading browsers capabilities');
 
-  var wdioConfig = module.getConfig('wdio', {});
   var capabilities = wdioConfig.capabilities;
   if(options.cap) {
     // leave in capabilitied only selected
@@ -46,6 +34,24 @@ module.task(function() {
   }
 
   process.env.WDIO_CAPABILITIES = JSON.stringify(capabilities);
+  return capabilities;
+}
+
+module.task(function() {
+
+  gutil.log('Sit back and relax...');
+
+  gutil.log('Loading browsers stack access details');
+
+  var browserstackConfig = module.getConfig('browserstack', {
+    'username': process.env.BROWSERSTACK_USERNAME,
+    'accesskey': process.env.BROWSERSTACK_ACCESS_KEY
+  });
+
+  process.env.BROWSERSTACK_USERNAME = browserstackConfig.username;
+  process.env.BROWSERSTACK_ACCESS_KEY = browserstackConfig.accesskey;
+
+  loadCapabities();
 
   gutil.log(
     'Usgin browsersstack user',
@@ -59,6 +65,13 @@ module.task(function() {
 
 });
 
-// // It integrates with screenshots api.
-// gulp.task('browsertest-screenshots', [], function(done) {
-// });
+// It integrates with screenshots api. It creates amazing screenshots
+// full page with no extra coding
+gulp.task('browsertest-screenshots', function() {
+  screenshots(
+    module.getConfig('browserstack.screenshotUrls', []),
+    loadCapabities()
+  ).pipe(
+    gulp.dest(wdioConfig.screenshotPath)
+  );
+});
