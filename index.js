@@ -15,6 +15,8 @@ var options = minimist(process.argv.slice(2), knownOptions);
 
 module.task(function() {
 
+  gutil.log('Sit back and relax...');
+
   gutil.log('Loading browsers stack access details');
 
   var browserstackConfig = module.getConfig('browserstack', {
@@ -32,7 +34,7 @@ module.task(function() {
   if(options.cap) {
     // leave in capabilitied only selected
     capabilities = capabilities.filter(function(obj){
-      return obj.browserName === options.cap;
+      return obj.browserName.toLowerCase() === options.cap.toLowerCase();
     });
   }
 
