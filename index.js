@@ -8,7 +8,7 @@ var minimist = require('minimist');
 
 var knownOptions = {
   string: 'cap',
-  default: { cap: 'ie' }
+  default: { cap: null }
 };
 
 var options = minimist(process.argv.slice(2), knownOptions);
@@ -33,6 +33,13 @@ module.task(function() {
     // leave in capabilitied only selected
     capabilities = capabilities.filter(function(obj){
       return obj.browserName === options.cap;
+    });
+  }
+
+  if(capabilities.length === 0) {
+    throw new gutil.PluginError({
+      plugin: 'browsertest',
+      message: 'Capability "' + options.cap + '" not found'
     });
   }
 

@@ -6,16 +6,32 @@ module.exports = {
         outputPath: ['./test/output'],
         screenshotPath: './test/output/screenshots',
         'capabilities': [{
-          'browserName': 'ie',
-          'os': 'Windows',
-          'browser': 'IE',
-          'version': '9',
+          'browserName': 'ie9',
+          'browser' : 'ie',
+          'browser_version' : '9.0',
+          'os' : 'Windows',
+          'os_version' : '7',
           'browserstack.debug': 'true'
         },{
           'browserName': 'ie10',
           'os': 'Windows',
-          'browser': 'IE',
-          'version': '10',
+          'os_version' : '7',
+          'browser' : 'ie',
+          'browser_version': '10',
+          'browserstack.debug': 'true'
+        },{
+          'browserName': 'ie11',
+          'os': 'Windows',
+          'os_version' : '10',
+          'browser' : 'ie',
+          'browser_version' : '11.0',
+          'browserstack.debug': 'true'
+        },{
+          'browserName': 'edge',
+          'browser' : 'edge',
+          'browser_version' : '13.0',
+          'os' : 'Windows',
+          'os_version' : '10',
           'browserstack.debug': 'true'
         }]
       },
