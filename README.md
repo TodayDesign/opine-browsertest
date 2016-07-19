@@ -22,6 +22,21 @@ Ideally the configuration should be in a `local.js` file in the config folder.
       }
     };
 
+### screenshots
+
+The screenshot task needs some extra configuration.
+
+    'screenshots': {
+        'output': './test/output/screenshots',
+        'base': 'http://www.google.com',
+        'urls': [
+          '/',
+          '/intl/en/policies/privacy'
+        ]
+    }
+
+The `base` parameter is not required, if omitted the urls in the list must be "full" URIs
+
 ### capabilities
 
 the default configuration has the following capabilities:
@@ -47,11 +62,12 @@ Capabilities settings for BrowserStack can be found at
 
 ## tasks
 
-- `browsertest`: it executes all the tests on all the capabilities. It's possible
-to run on a single capability specifying a `--cap` paramater with the name of the
-capability. e.g. `gulp browsertest --cap android`
+- `browsertest`: it executes all the tests on all the capabilities.
 
 - `browsertest-screenshots`: it creates screenshots of specified urls.
+
+For both tasks it's possible to run on a single capability specifying a
+`--cap` paramater with the name of the capability. e.g. `gulp browsertest --cap android`
 
 ## Fu(ea)ture(s)
 
