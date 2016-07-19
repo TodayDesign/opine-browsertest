@@ -64,6 +64,7 @@ module.exports = {
         },{
           'browserName' : 'safari',
           'browser' : 'safari',
+          'browser_version': '9.1',
           'os' : 'OS X',
           'os_version' : 'El Capitan',
           'browserstack.debug': 'true'
@@ -76,21 +77,25 @@ module.exports = {
         },{
           'browserName' : 'iPhone6',
           'os' : 'ios',
-          'device' : 'iPhone 6S',
+          'os_version': '8.3',
+          'device' : 'iPhone 6',
           'browserstack.debug': 'true'
         },{
           'browserName' : 'iPad',
           'os' : 'ios',
-          'device' : 'iPad Pro',
+          'os_version': '8.3',
+          'device' : 'iPad Air',
           'browserstack.debug': 'true'
         },{
           'browserName' : 'android',
           'os' : 'android',
+          'os_version': '5.0',
           'device' : 'Google Nexus 5',
           'browserstack.debug': 'true'
         },{
           'browserName' : 'android-tablet',
           'os' : 'android',
+          'os_version': '4.4',
           'device' : 'Samsung Galaxy Tab 4 10.1',
           'browserstack.debug': 'true'
         }]

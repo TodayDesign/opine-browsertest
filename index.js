@@ -77,7 +77,7 @@ gulp.task('browsertest-screenshots', function() {
   gutil.log('Clean output folder');
   del.sync(module.getConfig('outputPath', './test/output'));
 
-  screenshots(
+  return screenshots(
     module.getConfig('screenshots', {
       'base': null,
       'urls': []
