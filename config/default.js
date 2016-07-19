@@ -17,7 +17,7 @@ module.exports = {
           'os': 'Windows',
           'os_version' : '7',
           'browser' : 'ie',
-          'browser_version': '10',
+          'browser_version': '10.0',
           'browserstack.debug': 'true'
         },{
           'browserName': 'ie11',
@@ -36,24 +36,28 @@ module.exports = {
         },{
           'browserName' : 'firefox',
           'browser' : 'firefox',
+          'browser_version': '45.0',
           'os' : 'Windows',
           'os_version' : '10',
           'browserstack.debug': 'true'
         },{
           'browserName' : 'chrome',
           'browser' : 'chrome',
+          'browser_version': '50.0',
           'os' : 'Windows',
           'os_version' : '10',
           'browserstack.debug': 'true'
         },{
           'browserName' : 'chrome-mac',
           'browser' : 'chrome',
+          'browser_version': '50.0',
           'os' : 'OS X',
           'os_version' : 'El Capitan',
           'browserstack.debug': 'true'
         },{
           'browserName' : 'firefox-mac',
           'browser' : 'firefox',
+          'browser_version': '45.0',
           'os' : 'OS X',
           'os_version' : 'El Capitan',
           'browserstack.debug': 'true'

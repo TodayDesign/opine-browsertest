@@ -71,12 +71,18 @@ module.task(function() {
 // It integrates with screenshots api. It creates amazing screenshots
 // full page with no extra coding
 gulp.task('browsertest-screenshots', function() {
+
   loadBrowserstackAuthDetails();
-  return screenshots(
+
+  gutil.log('Clean output folder');
+  del.sync(module.getConfig('outputPath', './test/output'));
+
+  screenshots(
     module.getConfig('screenshots', {
       'base': null,
       'urls': []
     }),
     loadCapabities()
-  ).pipe(gulp.dest(wdioConfig.screenshotPath));
+  );
+
 });
