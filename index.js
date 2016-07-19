@@ -15,6 +15,18 @@ var knownOptions = {
 var options = minimist(process.argv.slice(2), knownOptions);
 var wdioConfig = module.getConfig('wdio', {});
 
+function loadBrowserstackAuthDetails() {
+  gutil.log('Loading browsers stack access details');
+
+  var browserstackConfig = module.getConfig('browserstack', {
+    'username': process.env.BROWSERSTACK_USERNAME,
+    'accesskey': process.env.BROWSERSTACK_ACCESS_KEY
+  });
+
+  process.env.BROWSERSTACK_USERNAME = browserstackConfig.username;
+  process.env.BROWSERSTACK_ACCESS_KEY = browserstackConfig.accesskey;
+}
+
 function loadCapabities() {
   gutil.log('Loading browsers capabilities');
 
@@ -41,16 +53,7 @@ module.task(function() {
 
   gutil.log('Sit back and relax...');
 
-  gutil.log('Loading browsers stack access details');
-
-  var browserstackConfig = module.getConfig('browserstack', {
-    'username': process.env.BROWSERSTACK_USERNAME,
-    'accesskey': process.env.BROWSERSTACK_ACCESS_KEY
-  });
-
-  process.env.BROWSERSTACK_USERNAME = browserstackConfig.username;
-  process.env.BROWSERSTACK_ACCESS_KEY = browserstackConfig.accesskey;
-
+  loadBrowserstackAuthDetails();
   loadCapabities();
 
   gutil.log(
@@ -68,10 +71,12 @@ module.task(function() {
 // It integrates with screenshots api. It creates amazing screenshots
 // full page with no extra coding
 gulp.task('browsertest-screenshots', function() {
-  screenshots(
-    module.getConfig('browserstack.screenshotUrls', []),
+  loadBrowserstackAuthDetails();
+  return screenshots(
+    module.getConfig('screenshots', {
+      'base': null,
+      'urls': []
+    }),
     loadCapabities()
-  ).pipe(
-    gulp.dest(wdioConfig.screenshotPath)
-  );
+  ).pipe(gulp.dest(wdioConfig.screenshotPath));
 });

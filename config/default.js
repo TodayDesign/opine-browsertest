@@ -66,6 +66,7 @@ module.exports = {
         },{
           'browserName' : 'iPhone5',
           'os' : 'ios',
+          'os_version': '7.0',
           'device' : 'iPhone 5S',
           'browserstack.debug': 'true'
         },{
@@ -92,8 +93,11 @@ module.exports = {
       },
       'browserstack': {
         'username': null,
-        'accesskey': null,
-        'screenshotUrls': []
+        'accesskey': null
+      },
+      'screenshots': {
+        'base': null,
+        'urls': []
       }
     }
   }
