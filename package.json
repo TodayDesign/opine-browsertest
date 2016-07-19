@@ -1,6 +1,6 @@
 {
   "name": "opine-browsertest",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "A gulp-opine module for browser automated testing with Nightwatch.js and BrowserStack",
   "main": "index.js",
   "scripts": {
