@@ -25,6 +25,11 @@ function loadBrowserstackAuthDetails() {
 
   process.env.BROWSERSTACK_USERNAME = browserstackConfig.username;
   process.env.BROWSERSTACK_ACCESS_KEY = browserstackConfig.accesskey;
+
+  gutil.log(
+    'Usgin browsersstack user',
+    gutil.colors.magenta(browserstackConfig.username)
+  );
 }
 
 function loadCapabities() {
@@ -56,15 +61,18 @@ module.task(function() {
   loadBrowserstackAuthDetails();
   loadCapabities();
 
-  gutil.log(
-    'Usgin browsersstack user',
-    gutil.colors.magenta(browserstackConfig.username)
-  );
-
   gutil.log('Clean output folder');
   del.sync(module.getConfig('outputPath', './test/output'));
 
-  return gulp.src('wdio.conf.js').pipe(webdriver(wdioConfig));
+
+  gutil.log(
+    'Launching tests. Check',
+    gutil.colors.cyan('https://www.browserstack.com/automate')
+  );
+
+  return gulp
+    .src('wdio.conf.js')
+    .pipe(webdriver(wdioConfig));
 
 });
 
