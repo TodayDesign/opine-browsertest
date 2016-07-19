@@ -53,6 +53,12 @@ capability. e.g. `gulp browsertest --cap android`
 
 - `browsertest-screenshots`: it creates screenshots of specified urls.
 
+## Fu(ea)ture(s)
+
+- Selected capabilities: `gulp browsertest --cap ie9 ie10 firefox`
+- Selected pages: `gulp browsertest --page home landing`
+- Selected tests: `gulp browsertest clickButton`
+
 [opine]: <https://github.com/StudioThick/gulp-opine>
 [webdriver]: <http://webdriver.io/>
 [browserstack]: <https://www.browserstack.com>
