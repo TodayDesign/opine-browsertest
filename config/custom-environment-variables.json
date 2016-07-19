@@ -1,0 +1,13 @@
+{
+  "opine": {
+    "nightwatch": {
+      "wdio": {
+        "capabilities": "WDIO_CAPABILITIES"
+      },
+      "browserstack": {
+        "username": "BROWSERSTACK_USERNAME",
+        "accesskey": "BROWSERSTACK_ACCESS_KEY"
+      }
+    }
+  }
+}
