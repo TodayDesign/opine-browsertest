@@ -23,6 +23,7 @@
     "del": "^2.2.1",
     "gulp-util": "^3.0.7",
     "gulp-webdriver": "^2.0.2",
+    "minimist": "^1.2.0",
     "wdio-mocha-framework": "^0.3.5",
     "wdio-spec-reporter": "0.0.2",
     "webdriverio": "^4.2.1"

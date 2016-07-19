@@ -6,49 +6,16 @@ module.exports = {
         outputPath: ['./test/output'],
         screenshotPath: './test/output/screenshots',
         'capabilities': [{
-          'name': 'ie-windows',
-          'platform' : 'WINDOWS',
-          'browserName' : 'internet explorer',
+          'browserName': 'ie',
+          'os': 'Windows',
+          'browser': 'IE',
+          'version': '9',
           'browserstack.debug': 'true'
-        }, {
-          'name': 'firefox-windows',
-          'platform' : 'WINDOWS',
-          'browserName' : 'firefox',
-          'browserstack.debug': 'true'
-        }, {
-          'name': 'chrome-windows',
-          'platform' : 'WINDOWS',
-          'browserName' : 'chrome',
-          'browserstack.debug': 'true'
-        }, {
-          'name': 'firefox-mac',
-          'platform' : 'MAC',
-          'browserName' : 'firefox',
-          'browserstack.debug': 'true'
-        }, {
-          'name': 'chrome-mac',
-          'platform' : 'MAC',
-          'browserName' : 'chrome',
-          'browserstack.debug': 'true'
-        }, {
-          'name': 'safari-mac',
-          'platform' : 'MAC',
-          'browserName' : 'safari',
-          'browserstack.debug': 'true'
-        }, {
-          'name': 'iPad',
-          'platform' : 'MAC',
-          'browserName' : 'iPad',
-          'browserstack.debug': 'true'
-        }, {
-          'name': 'iPhone',
-          'platform' : 'MAC',
-          'browserName' : 'iPhone',
-          'browserstack.debug': 'true'
-        }, {
-          'name': 'android',
-          'platform' : 'ANDROID',
-          'browserName' : 'android',
+        },{
+          'browserName': 'ie10',
+          'os': 'Windows',
+          'browser': 'IE',
+          'version': '10',
           'browserstack.debug': 'true'
         }]
       },
